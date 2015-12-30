@@ -1,0 +1,20 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
+
+[*.{css,less,html,php,js}]
+indent_style = tab
+
+[*.{css,less,js}]
+tab_width = 4
+
+[*.{html,php}]
+tab_width = 2
