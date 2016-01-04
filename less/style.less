@@ -1,4 +1,7 @@
-@import '../libs/bootstrap/css/bootstrap.min.css';
+@header_bgc: rgba(255, 0, 0, 0.2);
+@loop_bgc: rgba(0, 255, 0, 0.2);
+@footer_bgc: rgba(0, 0, 255, 0.2);
+
 .tile {
 	border: 1px solid rgba(0,0,0,0.1);
 	border-radius: 4px;
@@ -6,4 +9,14 @@
 }
 header, #loop, footer {
 	.tile;
+	padding: 4px;
+}
+header {
+	background-color: @header_bgc;
+}
+#loop {
+	background-color: @loop_bgc;
+}
+footer {
+	background-color: @footer_bgc;
 }
