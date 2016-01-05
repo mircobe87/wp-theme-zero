@@ -2,11 +2,16 @@
 @loop_bgc: rgba(0, 255, 0, 0.2);
 @footer_bgc: rgba(0, 0, 255, 0.2);
 
-.tile {
-	border: 1px solid rgba(0,0,0,0.1);
-	border-radius: 4px;
-	box-shadow: 0 2px 4px -2px rgba(0,0,0,0.3);
+.border(@r, @g, @b, @lineStyle: solid) {
+	border: 1px @lineStyle rgba(@r, @g, @b, 0.1);
+	box-shadow: 0 2px 4px -2px rgba(@r, @g, @b, 0.3);
 }
+
+.tile {
+	.border(0, 0, 0);
+	border-radius: 4px;
+}
+
 header, #loop, footer {
 	.tile;
 	padding: 4px;
@@ -19,4 +24,7 @@ header {
 }
 footer {
 	background-color: @footer_bgc;
+}
+article {
+	.border(255, 0, 0, dashed);
 }
