@@ -22,13 +22,38 @@
 						<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 							<article>
 								<header>
-									<?php the_title(); ?>
+									<h2><?php the_title(); ?></h2>
+									<div class="post-metadata">
+										<?php
+											if ( has_post_thumbnail() ) {
+												$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large')[0];
+	  										echo '<img src="' . $large_image_url . '" class="post-metadata-img"/>';
+											}
+										?>
+										<table>
+											<tr>
+												<th><span class="glyphicon glyphicon-user" aria-hidden="true"></span></th>
+												<td><?php the_author(); ?></td>
+											</tr>
+											<tr>
+												<th><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></th>
+												<td><?php the_category(', '); ?> </td>
+											</tr>
+											<tr>
+												<th><span class="glyphicon glyphicon-tags" aria-hidden="true"></span></th>
+												<td><?php the_tags('', ', ', '.' ); ?></td>
+											</tr>
+										</table>
+									</div>
 								</header>
-								<div>
+								<div class="post-body">
 									<?php the_content(); ?>
 								</div>
 								<footer>
-									<?php the_author(); ?>
+									<?php
+										$format = 'l d M Y, H:i';
+										the_date($format);
+									?>
 								</footer>
 							</article>
 						<?php endwhile; else : ?>

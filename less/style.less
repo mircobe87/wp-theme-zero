@@ -12,19 +12,51 @@
 	border-radius: 4px;
 }
 
-header, #loop, footer {
+body > header, #loop, body > footer {
 	.tile;
 	padding: 4px;
 }
-header {
+body > header {
 	background-color: @header_bgc;
 }
 #loop {
 	background-color: @loop_bgc;
 }
-footer {
+body > footer {
 	background-color: @footer_bgc;
 }
 article {
-	.border(255, 0, 0, dashed);
+	.tile;
+	background-color: white;
+	margin-bottom: 16px;
+	padding: 4px;
+	footer {
+		font-style: italic;
+		font-size: 0.8em;
+		color: #919191;
+		text-align: right;
+	};
+}
+.post-body {
+	padding: 8px;
+}
+.post-metadata {
+	height: 128px;
+	img {
+		max-width: 256px;
+		max-height: 128px;
+		padding: 8px;
+		background-color: white;
+		.border(0,0,0);
+		border-radius: 4px;
+	};
+	table {
+		margin-top: 20px;
+	}
+	img, table {
+		float: left;
+	};
+	th {
+		padding: 4px 8px;
+	};
 }
